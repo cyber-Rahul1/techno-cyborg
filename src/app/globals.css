@@ -1,26 +1,95 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080B12;
+  --foreground: #F8FAFC;
+  --card-bg: #101522;
+  --accent-primary: #6366F1;
+  --accent-secondary: #8B5CF6;
+  --cyan-highlight: #22D3EE;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-dark-bg: #080B12;
+  --color-dark-surface: #101522;
+  --color-dark-card: #141A29;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+  --color-accent-indigo: #6366F1;
+  --color-accent-violet: #8B5CF6;
+  --color-accent-cyan: #22D3EE;
+  --color-light-bg: #F8FAFC;
+  --color-light-text: #111827;
+  --color-muted-text: #94A3B8;
+  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #080B12;
+  color: #F8FAFC;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Subtle background illumination utilities */
+.glow-indigo {
+  background: radial-gradient(circle 500px at 50% 50%, rgba(99, 102, 241, 0.12), transparent 70%);
+}
+
+.glow-violet {
+  background: radial-gradient(circle 450px at 50% 50%, rgba(139, 92, 246, 0.10), transparent 70%);
+}
+
+.glow-cyan {
+  background: radial-gradient(circle 400px at 50% 50%, rgba(34, 211, 238, 0.08), transparent 70%);
+}
+
+/* Tech grid subtle pattern */
+.bg-tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-tech-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle card borders */
+.tech-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tech-border-glow:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080B12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
 }
